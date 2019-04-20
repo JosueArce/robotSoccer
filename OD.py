@@ -114,11 +114,11 @@ while cv.waitKey(1) < 0:
 
     blob = cv.dnn.blobFromImage(frame, 1 / 255, (inpWidth, inpHeight), [0, 0, 0], 1, crop=False)
 
-    # Set the input for the net
+    # Set the input the the net
     net.setInput(blob)
     outs = net.forward(getOutputsNames(net))
 
     postprocess(frame, outs)
 
     # show the image
-cv.imshow(winName, frame)
+    cv.imshow(winName, frame)
